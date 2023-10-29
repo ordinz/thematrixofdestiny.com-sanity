@@ -14,6 +14,7 @@ export default {
       title: 'Number',
       type: 'slug',
       description: 'Number of the card',
+      validation: (Rule) => Rule.positive().integer(),
     },
     {
       name: 'title',
@@ -26,7 +27,7 @@ export default {
       title: 'Characteristics',
       type: 'array',
       of: [{type: 'block'}],
-      description: 'Characteristics of The Hierophant',
+      description: 'Characteristics of this energy type',
     },
     {
       name: 'positiveAspect',
@@ -48,6 +49,18 @@ export default {
       type: 'array',
       of: [{type: 'block'}],
       description: 'Suggestions for working on negatives',
+    },
+    {
+      title: 'Recommendations',
+      name: 'recommendations',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      title: 'Questions for Self Evaluation',
+      name: 'selfEvaluation',
+      type: 'array',
+      of: [{type: 'block'}],
     },
   ],
 }

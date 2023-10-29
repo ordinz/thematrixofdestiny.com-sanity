@@ -3,6 +3,12 @@ export default {
   name: 'teamMember',
   title: 'Team Member',
   type: 'document',
+  orderings: [
+    {
+      title: 'Sort Order',
+      by: [{field: 'sortOrder', direction: 'asc'}],
+    },
+  ],
   preview: {
     select: {
       title: 'name',
@@ -58,9 +64,21 @@ export default {
           type: 'object',
           fields: [
             {
-              name: 'title',
-              title: 'Title',
+              name: 'platform',
+              title: 'Platform',
               type: 'string',
+              options: {
+                list: [
+                  {title: 'Facebook', value: 'facebook'},
+                  {title: 'Twitter', value: 'twitter'},
+                  {title: 'Instagram', value: 'instagram'},
+                  {title: 'TikTok', value: 'tiktok'},
+                  {title: 'YouTube', value: 'youtube'},
+                  {title: 'Telegram', value: 'telegram'},
+                  {title: 'LinkedIn', value: 'linkedin'},
+                  // ...and so forth for other platforms
+                ],
+              },
             },
             {
               name: 'url',
