@@ -2,6 +2,12 @@ export default {
   name: 'arcana',
   title: 'Arcana',
   type: 'document',
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'number.current',
+    },
+  },
   fields: [
     {
       name: 'number',
