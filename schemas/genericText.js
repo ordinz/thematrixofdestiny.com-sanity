@@ -23,10 +23,40 @@ export default {
     },
     {
       name: 'b',
-      title: 'Text A',
+      title: 'Text B',
       type: 'array',
       of: [{type: 'block'}],
       description: 'Text of the document',
+    },
+    {
+      name: 'c',
+      title: 'Text C',
+      type: 'array',
+      of: [{type: 'block'}],
+      description: 'Text of the document',
+    },
+    {
+      name: 'listA',
+      title: 'List A',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'title',
+              title: 'Title',
+              type: 'string',
+            },
+            {
+              name: 'text',
+              title: 'Text',
+              type: 'array',
+              of: [{type: 'block'}],
+            },
+          ],
+        },
+      ],
     },
   ],
 }
