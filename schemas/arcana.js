@@ -14,7 +14,7 @@ export default {
       title: 'Number',
       type: 'slug',
       description: 'Number of the card',
-      validation: (Rule) => Rule.positive().integer(),
+      // validation: (Rule) => Rule.positive().integer(),
     },
     {
       name: 'title',
@@ -61,6 +61,43 @@ export default {
       name: 'selfEvaluation',
       type: 'array',
       of: [{type: 'block'}],
+    },
+    {
+      name: 'moneyLine',
+      title: 'Money Line',
+      type: 'object',
+      fields: [
+        {
+          name: 'description',
+          title: 'Description',
+          type: 'array',
+          of: [{type: 'block'}],
+        },
+        {
+          name: 'blocks',
+          title: 'Blocks',
+          type: 'array',
+          of: [{type: 'block'}],
+        },
+        {
+          name: 'recommendedJobs',
+          title: 'Recommended Jobs',
+          type: 'array',
+          of: [{type: 'block'}],
+        },
+        {
+          name: 'sourcesOfFinancialEnergy',
+          title: 'Sources of Financial Energy',
+          type: 'array',
+          of: [{type: 'block'}],
+        },
+        {
+          name: 'spendOn',
+          title: 'Spend On',
+          type: 'array',
+          of: [{type: 'block'}],
+        },
+      ],
     },
   ],
 }
