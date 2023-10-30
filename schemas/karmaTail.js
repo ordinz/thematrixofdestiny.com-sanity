@@ -4,8 +4,8 @@ export default {
   type: 'document',
   preview: {
     select: {
-      title: 'title',
-      subtitle: 'number.current',
+      title: 'numbers',
+      subtitle: 'title',
     },
   },
   fields: [
