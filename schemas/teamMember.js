@@ -37,6 +37,12 @@ export default {
       description: 'Name',
     },
     {
+      name: 'email',
+      title: 'Email',
+      type: 'string',
+      description: 'Email',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
