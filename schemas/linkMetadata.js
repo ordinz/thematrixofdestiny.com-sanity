@@ -26,30 +26,16 @@ export default {
       name: 'ogType',
       title: 'Type',
       type: 'string',
+      initialValue: 'website',
       options: {
         list: [
           {title: 'Website', value: 'website'},
           {title: 'Article', value: 'article'},
-          {title: 'Book', value: 'book'},
           {title: 'Profile', value: 'profile'},
-          {title: 'Music Song', value: 'music.song'},
-          {title: 'Music Album', value: 'music.album'},
-          {title: 'Music Playlist', value: 'music.playlist'},
-          {title: 'Music Radio Station', value: 'music.radio_station'},
-          {title: 'Video Movie', value: 'video.movie'},
-          {title: 'Video Episode', value: 'video.episode'},
-          {title: 'Video TV Show', value: 'video.tv_show'},
           {title: 'Video Other', value: 'video.other'},
         ],
       },
       description: 'The nature of the content. This will be used in the og:type meta tag.',
-    },
-    {
-      name: 'ogSiteName',
-      title: 'Site Name',
-      type: 'string',
-      description:
-        'The name of the website or the overall site that the content belongs to. Used in the og:site_name meta tag.',
     },
     {
       name: 'ogImage',
