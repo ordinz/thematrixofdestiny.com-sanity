@@ -1,5 +1,5 @@
 export default {
-  name: 'linkMetadata',
+  name: 'pageMetadata',
   title: 'URL Metadata',
   type: 'document',
   fields: [
