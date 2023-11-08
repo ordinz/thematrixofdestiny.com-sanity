@@ -2,6 +2,13 @@ export default {
   name: 'pageMetadata',
   title: 'URL Metadata',
   type: 'document',
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'url.current',
+      media: 'ogImage',
+    },
+  },
   fields: [
     {
       name: 'url',
