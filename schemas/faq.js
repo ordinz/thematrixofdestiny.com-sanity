@@ -2,6 +2,26 @@ export default {
   name: 'faq',
   title: 'FAQ',
   type: 'document',
+  orderings: [
+    {
+      title: 'Sort Order',
+      by: [{field: 'order', direction: 'asc'}],
+    },
+  ],
+  preview: {
+    select: {
+      title: 'question',
+      order: 'order',
+    },
+    prepare(selection) {
+      const {title, order} = selection // Separate the spirits from one another
+
+      return {
+        ...selection,
+        title: `${order}. ${title}`, // Combine them in a dance most harmonious
+      }
+    },
+  },
   fields: [
     {
       name: 'question',
