@@ -22,7 +22,8 @@ export default {
     {
       name: 'review',
       title: 'Review',
-      type: 'text',
+      type: 'array', // Using an array to hold the block content
+      of: [{type: 'block'}], // Specifying that it contains block types
       description: 'The content of the review.',
     },
     {

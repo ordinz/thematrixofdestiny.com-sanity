@@ -5,5 +5,15 @@ import karmaTail from './karmaTail'
 import line from './line'
 import pageMetadata from './pageMetadata'
 import review from './review'
+import faq from './faq'
 
-export const schemaTypes = [arcana, genericText, teamMember, karmaTail, line, pageMetadata, review]
+export const schemaTypes = [
+  arcana,
+  genericText,
+  teamMember,
+  karmaTail,
+  line,
+  pageMetadata,
+  review,
+  faq,
+]
