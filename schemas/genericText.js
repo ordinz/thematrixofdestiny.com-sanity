@@ -55,6 +55,11 @@ export default {
               of: [{type: 'block'}],
             },
             {
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+            },
+            {
               name: 'url',
               title: 'URL',
               type: 'string',
