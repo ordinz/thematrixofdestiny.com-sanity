@@ -9,8 +9,8 @@ export default defineConfig({
   name: 'default',
   title: 'matrixofdestiny.com',
 
-  projectId: '8j8wjy7o',
-  dataset: 'production',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID,
+  dataset: process.env.SANITY_STUDIO_DATASET,
 
   plugins: [deskTool(), visionTool(), vercelDeployTool()],
 
