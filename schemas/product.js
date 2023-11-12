@@ -9,6 +9,21 @@ export default {
       type: 'string',
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLength: 200, // You can adjust the max length
+      },
+    },
+    {
+      name: 'available',
+      title: 'Available',
+      type: 'boolean',
+      initialValue: true, // Defaulted to true
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'array',
