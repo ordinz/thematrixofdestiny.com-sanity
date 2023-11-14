@@ -1,3 +1,5 @@
+import love from './love'
+
 const moneyLine = {
   name: 'moneyLine',
   title: 'Money Line',
@@ -73,13 +75,10 @@ export default {
       title: 'Character',
     },
     {
-      name: 'selfWork',
-      title: 'Self-Work',
-    },
-    {
       name: 'money',
-      title: 'Money Line',
+      title: 'Money',
     },
+    {name: 'love', title: 'Love'},
   ],
   preview: {
     select: {
@@ -150,5 +149,6 @@ export default {
       group: 'character',
     },
     {...moneyLine},
+    {...love, group: 'love'},
   ],
 }
