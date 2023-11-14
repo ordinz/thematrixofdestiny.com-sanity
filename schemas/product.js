@@ -35,6 +35,13 @@ export default {
       type: 'number',
     },
     {
+      name: 'quantity',
+      title: 'Quantity',
+      description: 'Number of products they receive',
+      type: 'number',
+      validation: (Rule) => Rule.min(1).integer(), // Ensuring it's a positive integer
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
@@ -48,6 +55,5 @@ export default {
       type: 'array',
       of: [{type: 'string'}],
     },
-    // Add more fields as needed
   ],
 }
