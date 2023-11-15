@@ -30,6 +30,12 @@ export default {
       of: [{type: 'block'}],
     },
     {
+      name: 'features',
+      title: 'Features',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
       name: 'price',
       title: 'Price',
       type: 'number',
