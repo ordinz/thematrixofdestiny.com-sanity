@@ -64,6 +64,11 @@ export default {
               title: 'URL',
               type: 'string',
             },
+            {
+              name: 'hidden',
+              title: 'Hidden',
+              type: 'boolean',
+            },
           ],
         },
       ],
