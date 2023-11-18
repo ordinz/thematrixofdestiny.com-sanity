@@ -65,6 +65,11 @@ export default {
               type: 'string',
             },
             {
+              name: 'free',
+              title: 'Free',
+              type: 'boolean',
+            },
+            {
               name: 'hidden',
               title: 'Hidden',
               type: 'boolean',
