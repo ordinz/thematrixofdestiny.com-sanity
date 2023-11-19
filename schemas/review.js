@@ -20,6 +20,11 @@ export default {
       description: 'Unique URL identifier for the review, generated from the name.',
     },
     {
+      name: 'landingPage',
+      title: 'Display on Landing Page',
+      type: 'boolean',
+    },
+    {
       name: 'review',
       title: 'Review',
       type: 'array', // Using an array to hold the block content
