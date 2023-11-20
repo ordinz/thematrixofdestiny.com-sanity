@@ -2,6 +2,12 @@ export default {
   name: 'genericText',
   title: 'Text (Generic)',
   type: 'document',
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'slug.current',
+    },
+  },
   fields: [
     {
       name: 'title',
