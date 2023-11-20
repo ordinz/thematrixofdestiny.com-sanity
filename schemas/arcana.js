@@ -1,4 +1,5 @@
 import love from './love'
+import purpose from './purpose'
 
 const moneyLine = {
   name: 'moneyLine',
@@ -79,6 +80,7 @@ export default {
       title: 'Money',
     },
     {name: 'love', title: 'Love'},
+    {name: 'purpose', title: 'Purpose'},
   ],
   preview: {
     select: {
@@ -150,5 +152,9 @@ export default {
     },
     {...moneyLine},
     {...love, group: 'love'},
+    {
+      ...purpose,
+      group: 'purpose',
+    },
   ],
 }
