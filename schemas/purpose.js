@@ -15,5 +15,17 @@ export default {
       type: 'array',
       of: [{type: 'block'}],
     },
+    {
+      name: 'before40',
+      title: 'Before 40',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      name: 'after40',
+      title: 'After 40',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
   ],
 }
