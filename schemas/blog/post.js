@@ -55,6 +55,11 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'metadata',
+      title: 'Metadata',
+      type: 'pageMetadata',
+    }),
   ],
 
   preview: {
