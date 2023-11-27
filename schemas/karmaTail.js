@@ -21,6 +21,12 @@ export default {
       type: 'string',
     },
     {
+      name: 'tinySummary',
+      title: 'Tiny Summary',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
       name: 'breakdown',
       title: 'Breakdown',
       type: 'array',

@@ -1,4 +1,4 @@
-export default {
+const moneyLine = {
   name: 'moneyLine',
   title: 'Money Line',
   type: 'object',
@@ -42,3 +42,17 @@ export default {
     },
   ],
 }
+
+let newFields = []
+
+moneyLine.fields.forEach((field) => {
+  let newField = {...field}
+  newField.name = 'ai_' + field.name
+  newField.title = field.title + ' (AI)'
+  newFields.push(field)
+  newFields.push(newField)
+})
+
+moneyLine.fields = newFields
+
+export default moneyLine

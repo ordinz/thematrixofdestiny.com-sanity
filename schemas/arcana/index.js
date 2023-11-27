@@ -1,18 +1,7 @@
 import love from './love'
 import purpose from './purpose'
 import moneyLine from './money'
-
-let newFields = []
-
-moneyLine.fields.forEach((field) => {
-  let newField = {...field}
-  newField.name = 'ai_' + field.name
-  newField.title = field.title + ' (AI)'
-  newFields.push(field)
-  newFields.push(newField)
-})
-
-moneyLine.fields = newFields
+import character from './character'
 
 export default {
   name: 'arcana',
@@ -60,52 +49,8 @@ export default {
       group: 'basics',
       description: 'Title of the document',
     },
-    {
-      name: 'characteristics',
-      title: 'Characteristics',
-      type: 'array',
-      group: 'character',
-      of: [{type: 'block'}],
-      description: 'Characteristics of this energy type',
-    },
-    {
-      name: 'positiveAspect',
-      title: 'Positive Aspect',
-      type: 'array',
-      of: [{type: 'block'}],
-      group: 'character',
-      description: 'Positive aspects of this energy type',
-    },
-    {
-      name: 'negativeAspect',
-      title: 'Negative Aspect',
-      type: 'array',
-      of: [{type: 'block'}],
-      group: 'character',
-      description: 'Negative aspects of this energy type',
-    },
-    {
-      name: 'workingOnNegatives',
-      title: 'Working on Negatives',
-      type: 'array',
-      of: [{type: 'block'}],
-      group: 'character',
-      description: 'Suggestions for working on negatives',
-    },
-    {
-      title: 'Recommendations',
-      name: 'recommendations',
-      type: 'array',
-      of: [{type: 'block'}],
-      group: 'character',
-    },
-    {
-      title: 'Questions for Self Evaluation',
-      name: 'selfEvaluation',
-      type: 'array',
-      of: [{type: 'block'}],
-      group: 'character',
-    },
+
+    ...character, // an array of fields
     {...moneyLine},
     {...love, group: 'love'},
     {
