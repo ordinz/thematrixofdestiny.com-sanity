@@ -34,6 +34,11 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'mainImageAlt',
+      title: 'Main image alt text',
+      type: 'string',
+    }),
+    defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',
