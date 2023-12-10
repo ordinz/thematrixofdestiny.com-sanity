@@ -41,6 +41,18 @@ export default {
       type: 'number',
     },
     {
+      name: 'stripe',
+      title: 'Stripe',
+      type: 'object',
+      fields: [
+        {
+          name: 'priceId',
+          title: 'Price ID',
+          type: 'string',
+        },
+      ],
+    },
+    {
       name: 'quantity',
       title: 'Quantity',
       description: 'Number of products they receive',
