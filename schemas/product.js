@@ -46,9 +46,28 @@ export default {
       type: 'object',
       fields: [
         {
-          name: 'priceId',
-          title: 'Price ID',
-          type: 'string',
+          name: 'development',
+          title: 'Development',
+          type: 'object',
+          fields: [
+            {
+              name: 'priceId',
+              title: 'Price ID',
+              type: 'string',
+            },
+          ],
+        },
+        {
+          name: 'production',
+          title: 'Production',
+          type: 'object',
+          fields: [
+            {
+              name: 'priceId',
+              title: 'Price ID',
+              type: 'string',
+            },
+          ],
         },
       ],
     },
