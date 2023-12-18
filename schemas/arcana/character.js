@@ -17,12 +17,26 @@ export default [
     description: 'Characteristics of this energy type',
   },
   {
+    name: 'characteristicsSummary',
+    title: 'Characteristics Summary',
+    group,
+    type: 'array',
+    of: [{type: 'block'}],
+  },
+  {
     name: 'positiveAspect',
     title: 'Positive Aspect',
     type: 'array',
     of: [{type: 'block'}],
     group,
     description: 'Positive aspects of this energy type',
+  },
+  {
+    name: 'positiveAspectSummary',
+    title: 'Positive Aspect Summary',
+    type: 'array',
+    group,
+    of: [{type: 'block'}],
   },
   {
     name: 'negativeAspect',
@@ -33,6 +47,13 @@ export default [
     description: 'Negative aspects of this energy type',
   },
   {
+    name: 'negativeAspectSummary',
+    title: 'Negative Aspect Summary',
+    type: 'array',
+    group,
+    of: [{type: 'block'}],
+  },
+  {
     name: 'workingOnNegatives',
     title: 'Working on Negatives',
     type: 'array',
@@ -41,11 +62,25 @@ export default [
     description: 'Suggestions for working on negatives',
   },
   {
+    name: 'workingOnNegativesSummary',
+    title: 'Working on Negatives Summary',
+    type: 'array',
+    group,
+    of: [{type: 'block'}],
+  },
+  {
     title: 'Recommendations',
     name: 'recommendations',
     type: 'array',
     of: [{type: 'block'}],
     group,
+  },
+  {
+    name: 'recommendationsSummary',
+    title: 'Recommendations Summary',
+    group,
+    type: 'array',
+    of: [{type: 'block'}],
   },
   {
     title: 'Questions for Self Evaluation',
