@@ -51,6 +51,12 @@ export default {
       group: 'basics',
       description: 'Title of the document',
     },
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      group: 'basics',
+    },
 
     ...character, // an array of fields
     {...moneyLine},
