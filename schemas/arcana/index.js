@@ -2,6 +2,7 @@ import love from './love'
 import purpose from './purpose'
 import moneyLine from './money'
 import character from './character'
+import talents from './talents'
 
 export default {
   name: 'arcana',
@@ -26,6 +27,7 @@ export default {
     },
     {name: 'love', title: 'Love'},
     {name: 'purpose', title: 'Purpose'},
+    {name: 'talents', title: 'Talents'},
   ],
   preview: {
     select: {
@@ -57,5 +59,6 @@ export default {
       ...purpose,
       group: 'purpose',
     },
+    {...talents, group: 'talents'},
   ],
 }
