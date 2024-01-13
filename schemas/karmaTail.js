@@ -50,5 +50,11 @@ export default {
       type: 'array',
       of: [{type: 'block'}],
     },
+    {
+      name: 'birthdate',
+      title: 'Birthdate',
+      description: 'A birthdate that is used to calculate the karma tail',
+      type: 'date',
+    },
   ],
 }
