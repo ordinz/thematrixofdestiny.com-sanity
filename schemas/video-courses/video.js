@@ -14,6 +14,15 @@ export default {
       type: 'string',
     },
     {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'videoId',
       title: 'Video ID',
       description: 'The ID of the video on Loom',
@@ -22,7 +31,14 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'text',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      name: 'length',
+      title: 'Length',
+      type: 'number',
+      description: 'Length in seconds',
     },
     positionField,
   ],

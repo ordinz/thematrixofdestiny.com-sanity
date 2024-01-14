@@ -1,8 +1,8 @@
 import {positionField, positionOrdering} from '../position'
 
 export default {
-  name: 'course',
-  title: 'Course',
+  name: 'video-course',
+  title: 'Video Course',
   type: 'document',
   orderings: [positionOrdering],
   fields: [
@@ -23,7 +23,19 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'text',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      name: 'text',
+      title: 'Text',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
     },
     {
       name: 'sections',

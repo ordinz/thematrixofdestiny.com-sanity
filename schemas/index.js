@@ -9,7 +9,7 @@ import pageMetadata from './pageMetadata'
 import product from './product'
 import review from './review'
 import teamMember from './teamMember'
-import courses from './courses'
+import videoCourses from './video-courses'
 
 export const groups = [
   {title: 'Arcana', icon: Sparkles, schemaTypes: [arcana, karmaTail, line]},
@@ -18,7 +18,7 @@ export const groups = [
   {title: 'Landing Page', icon: Pyramid, schemaTypes: [review, faq, teamMember]},
   {title: 'SEO', icon: Search, schemaTypes: [pageMetadata]},
   {title: 'Other', icon: Boxes, schemaTypes: [genericText]},
-  {title: 'Courses', icon: Video, schemaTypes: courses},
+  {title: 'Video Courses', icon: Video, schemaTypes: videoCourses},
 ]
 
 export const schemaTypes = groups.reduce((types, group) => {
