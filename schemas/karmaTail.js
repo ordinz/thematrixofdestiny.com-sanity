@@ -51,6 +51,11 @@ export default {
       of: [{type: 'block'}],
     },
     {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+    },
+    {
       name: 'birthdate',
       title: 'Birthdate',
       description: 'A birthdate that is used to calculate the karma tail',
