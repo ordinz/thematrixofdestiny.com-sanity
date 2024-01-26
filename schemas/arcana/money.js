@@ -23,6 +23,12 @@ const moneyLine = {
       of: [{type: 'block'}],
     },
     {
+      name: 'blocksSummaru',
+      title: 'Blocks Summary',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
       name: 'recommendedJobs',
       title: 'Recommended Jobs',
       type: 'array',
