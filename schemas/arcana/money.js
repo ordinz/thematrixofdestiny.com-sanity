@@ -23,7 +23,7 @@ const moneyLine = {
       of: [{type: 'block'}],
     },
     {
-      name: 'blocksSummaru',
+      name: 'blocksSummary',
       title: 'Blocks Summary',
       type: 'array',
       of: [{type: 'block'}],
