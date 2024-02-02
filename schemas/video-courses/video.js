@@ -15,6 +15,13 @@ export default {
   },
   fields: [
     {
+      name: 'released',
+      title: 'Released',
+      description: 'Check this box when the video is ready for the public',
+      type: 'boolean',
+      default: false,
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',
