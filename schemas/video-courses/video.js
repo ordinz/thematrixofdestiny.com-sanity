@@ -7,6 +7,12 @@ export default {
   title: 'Video',
   type: 'document',
   orderings: [positionOrdering],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'slug.current',
+    },
+  },
   fields: [
     {
       name: 'title',
