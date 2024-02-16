@@ -52,6 +52,13 @@ export default {
       description: 'Title of the document',
     },
     {
+      name: 'tags',
+      title: 'Tags',
+      type: 'array',
+      of: [{type: 'string'}],
+      group: 'basics',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
