@@ -22,6 +22,13 @@ export default {
       default: false,
     },
     {
+      name: 'free',
+      title: 'Free',
+      description: 'Available to everyone without a purchase',
+      type: 'boolean',
+      default: false,
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',
