@@ -43,6 +43,13 @@ export default {
       type: 'array',
       of: [{type: 'reference', to: [{type: 'section'}]}],
     },
+    {
+      name: 'product',
+      title: 'Product',
+      description: 'The product that this course is associated with (stripe)',
+      type: 'reference',
+      to: [{type: 'product'}], // Referencing the 'product' type
+    },
     positionField,
   ],
 }
