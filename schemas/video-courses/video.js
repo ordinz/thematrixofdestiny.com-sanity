@@ -60,6 +60,21 @@ export default {
       type: 'number',
       description: 'Length in seconds',
     },
+    {
+      name: 'digitalDownloads',
+      title: 'Digital Downloads',
+      description: 'Embed digital downloads related to this video',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {name: 'title', title: 'Title', type: 'string'},
+            {name: 'file', title: 'File', type: 'file', options: {storeOriginalFilename: true}},
+          ],
+        },
+      ],
+    },
     positionField,
   ],
 }
