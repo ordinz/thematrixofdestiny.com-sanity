@@ -39,7 +39,7 @@ export default defineConfig({
       // ... other configurations ...
     }),
     visionTool(),
-    vercelDeployTool(),
+    // vercelDeployTool(),
   ],
 
   schema: {
