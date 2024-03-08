@@ -50,6 +50,12 @@ export default {
       type: 'reference',
       to: [{type: 'product'}], // Referencing the 'product' type
     },
+    {
+      name: 'features',
+      title: 'Features',
+      type: 'array',
+      of: [{type: 'string'}],
+    },
     positionField,
   ],
 }
