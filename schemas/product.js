@@ -1,3 +1,59 @@
+const paymentPlanFields = {
+  title: 'Payment Plans',
+  name: 'paymentPlans',
+  type: 'array',
+  of: [
+    {
+      type: 'object',
+      fields: [
+        {
+          title: 'Price',
+          name: 'price',
+          type: 'number', // Define the type as number for the price
+          description: 'Set the price for this plan',
+        },
+        {
+          title: 'Number of Payments (Iterations)',
+          name: 'totalIterations',
+          type: 'number', // Define the type as number for the price
+          description: 'Total number of payments for this plan',
+        },
+        {
+          title: 'Billing Interval',
+          name: 'interval',
+          type: 'string', // Define the billing interval
+          options: {
+            list: ['daily', 'monthly'], // Include 'daily' and 'monthly' options
+          },
+          description: 'Frequency at which a subscription is billed',
+        },
+        {
+          title: 'Price ID',
+          name: 'priceId',
+          type: 'string', // The Stripe Price ID associated with this plan
+          description: 'Stripe Price ID for billing',
+        },
+      ],
+      preview: {
+        select: {
+          price: 'price',
+          priceId: 'priceId',
+          interval: 'interval',
+          totalIterations: 'totalIterations',
+        },
+        prepare({price, priceId, interval, totalIterations}) {
+          return {
+            title: `${totalIterations ? totalIterations : 'Iterations not set'} x ${
+              price ? '$' + price : 'Price not set'
+            } ${interval ? interval : 'Interval not set'}`,
+            subtitle: priceId,
+          }
+        },
+      },
+    },
+  ],
+}
+
 export default {
   name: 'product',
   title: 'Product',
@@ -61,6 +117,7 @@ export default {
               title: 'Price ID',
               type: 'string',
             },
+            paymentPlanFields,
           ],
         },
         {
@@ -73,6 +130,7 @@ export default {
               title: 'Price ID',
               type: 'string',
             },
+            paymentPlanFields,
           ],
         },
       ],
