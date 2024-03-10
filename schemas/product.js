@@ -54,6 +54,26 @@ const paymentPlanFields = {
   ],
 }
 
+const stripeFields = [
+  {
+    name: 'priceId',
+    title: 'Price ID',
+    type: 'string',
+  },
+  {
+    name: 'price',
+    title: 'Price',
+    type: 'number',
+  },
+  {
+    name: 'higherPrice',
+    title: 'Higher Price',
+    description: "To show the 'from' price",
+    type: 'number',
+  },
+  paymentPlanFields,
+]
+
 export default {
   name: 'product',
   title: 'Product',
@@ -111,27 +131,25 @@ export default {
           name: 'development',
           title: 'Development',
           type: 'object',
-          fields: [
-            {
-              name: 'priceId',
-              title: 'Price ID',
-              type: 'string',
-            },
-            paymentPlanFields,
-          ],
+          fields: stripeFields,
+        },
+        {
+          name: 'mx_development',
+          title: 'Mx Development',
+          type: 'object',
+          fields: stripeFields,
+        },
+        {
+          name: 'mx_production',
+          title: 'Mx Production',
+          type: 'object',
+          fields: stripeFields,
         },
         {
           name: 'production',
-          title: 'Production',
+          title: 'Production | AEVUM',
           type: 'object',
-          fields: [
-            {
-              name: 'priceId',
-              title: 'Price ID',
-              type: 'string',
-            },
-            paymentPlanFields,
-          ],
+          fields: stripeFields,
         },
       ],
     },
