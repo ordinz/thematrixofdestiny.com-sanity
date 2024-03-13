@@ -23,7 +23,7 @@ const paymentPlanFields = {
           name: 'interval',
           type: 'string', // Define the billing interval
           options: {
-            list: ['daily', 'monthly'], // Include 'daily' and 'monthly' options
+            list: ['daily', 'monthly', 'bi-weekly'],
           },
           description: 'Frequency at which a subscription is billed',
         },
