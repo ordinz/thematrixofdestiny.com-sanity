@@ -67,5 +67,11 @@ export default {
       of: [{type: 'string'}],
     },
     positionField,
+    {
+      name: 'faq',
+      title: 'FAQ',
+      type: 'array',
+      of: [{type: 'faq'}],
+    },
   ],
 }
