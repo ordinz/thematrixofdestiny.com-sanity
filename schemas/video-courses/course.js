@@ -34,7 +34,17 @@ export default {
     },
     {
       name: 'image',
-      title: 'Image',
+      title: 'Cover Image',
+      type: 'image',
+    },
+    {
+      name: 'headerImage',
+      title: 'Header Image for Mobile',
+      type: 'image',
+    },
+    {
+      name: 'headerImage_lg',
+      title: 'Header Image for Desktop',
       type: 'image',
     },
     {
