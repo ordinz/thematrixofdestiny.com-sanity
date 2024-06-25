@@ -3,6 +3,7 @@ import purpose from './purpose'
 import moneyLine from './money'
 import character from './character'
 import talents from './talents'
+import connection from './connection'
 
 export default {
   name: 'arcana',
@@ -28,6 +29,7 @@ export default {
     {name: 'love', title: 'Love'},
     {name: 'purpose', title: 'Purpose'},
     {name: 'talents', title: 'Talents'},
+    {name: 'connection', title: 'Connection'},
   ],
   preview: {
     select: {
@@ -73,5 +75,6 @@ export default {
       group: 'purpose',
     },
     {...talents, group: 'talents'},
+    {...connection, group: 'connection'},
   ],
 }
