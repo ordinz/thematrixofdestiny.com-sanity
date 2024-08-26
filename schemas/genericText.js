@@ -21,6 +21,12 @@ export default {
       type: 'slug',
     },
     {
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: {type: 'teamMember'},
+    },
+    {
       name: 'a',
       title: 'Text A',
       type: 'array',
