@@ -55,6 +55,11 @@ export default {
               type: 'string',
             },
             {
+              name: 'subtitle',
+              title: 'Subtitle',
+              type: 'string',
+            },
+            {
               name: 'text',
               title: 'Text',
               type: 'array',
