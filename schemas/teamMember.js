@@ -13,14 +13,15 @@ export default {
     select: {
       title: 'name',
       media: 'image',
-      order: 'sortOrder', // Summon the sortOrder from the depths
+      archived: 'archived',
+      order: 'sortOrder',
     },
     prepare(selection) {
-      const {title, order} = selection // Separate the spirits from one another
+      const {title, order, archived} = selection
 
       return {
         ...selection,
-        title: `${order}. ${title}`, // Combine them in a dance most harmonious
+        title: `${order}. ${title} ${archived ? '(archived)' : ''}`,
       }
     },
   },
@@ -94,6 +95,12 @@ export default {
           ],
         },
       ],
+    },
+    {
+      name: 'archived',
+      title: 'Archived',
+      type: 'boolean',
+      description: 'Archived',
     },
   ],
 }
