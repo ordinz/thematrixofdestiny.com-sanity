@@ -1,62 +1,59 @@
-const xFields = [
-  {
-    name: 'theyMetFor',
-    title: 'What did the couple meet for?',
-    type: 'array',
-    of: [{type: 'block'}],
-  },
-  {
-    name: 'howTheyShowUp',
-    title: 'How does a couple show up',
-    type: 'array',
-    of: [{type: 'block'}],
-  },
-]
-
 export default {
   name: 'connection',
   title: 'Connection',
   type: 'object',
   fields: [
     {
+      name: 'why',
+      title: 'Why Did They Meet?',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      name: 'lessonsOfTheCouple', //only negative
+      title: 'Couples Lessons',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      name: 'possibleReasonOfABreakup',
+      title: 'Possible Reason of a Breakup',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
+      name: 'karmic',
+      name: 'Karmic',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
+    {
       name: 'positive',
       title: 'Positive',
-      type: 'object',
-      fields: xFields,
+      type: 'array',
+      of: [{type: 'block'}],
     },
     {
       name: 'negative',
       title: 'Negative',
-      type: 'object',
-      fields: xFields,
-    },
-    {
-      name: 'partnership',
-      title: 'Partnership Goals',
       type: 'array',
       of: [{type: 'block'}],
     },
     {
-      name: 'relationship',
-      title: 'Relationship Goals',
+      name: 'recommendation',
+      title: 'Recommendation',
       type: 'array',
       of: [{type: 'block'}],
     },
     {
-      name: 'comfortZone',
-      title: 'Comfort Zone',
+      name: 'money',
+      title: 'Money',
       type: 'array',
       of: [{type: 'block'}],
     },
     {
-      name: 'moneyLove',
-      title: 'Money & Love',
-      type: 'array',
-      of: [{type: 'block'}],
-    },
-    {
-      name: 'negativeKarma',
-      title: 'Negative Karma',
+      name: 'love',
+      title: 'Love',
       type: 'array',
       of: [{type: 'block'}],
     },

@@ -4,6 +4,7 @@ import moneyLine from './money'
 import character from './character'
 import talents from './talents'
 import connection from './connection'
+import year from './year'
 
 export default {
   name: 'arcana',
@@ -30,6 +31,7 @@ export default {
     {name: 'purpose', title: 'Purpose'},
     {name: 'talents', title: 'Talents'},
     {name: 'connection', title: 'Connection'},
+    {name: 'year', title: 'Year'},
   ],
   preview: {
     select: {
@@ -76,5 +78,6 @@ export default {
     },
     {...talents, group: 'talents'},
     {...connection, group: 'connection'},
+    {...year, group: 'year'},
   ],
 }
