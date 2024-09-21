@@ -11,7 +11,7 @@ export default {
     },
     {
       name: 'aiText',
-      title: 'Text',
+      title: 'AI Text',
       type: 'array',
       of: [{type: 'block'}],
     },
