@@ -9,5 +9,11 @@ export default {
       type: 'array',
       of: [{type: 'block'}],
     },
+    {
+      name: 'aiText',
+      title: 'Text',
+      type: 'array',
+      of: [{type: 'block'}],
+    },
   ],
 }
