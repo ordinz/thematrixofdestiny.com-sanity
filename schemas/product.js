@@ -117,6 +117,12 @@ export default {
       },
     },
     {
+      name: 'isSubscription',
+      title: 'Is Subscription',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
       name: 'available',
       title: 'Available',
       type: 'boolean',
