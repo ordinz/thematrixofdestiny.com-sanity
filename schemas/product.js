@@ -129,22 +129,28 @@ export default {
       of: [{type: 'block'}],
     },
     {
-      name: 'features',
-      title: 'Features',
+      name: 'featureItems',
+      title: 'Feature Items',
       type: 'array',
-      of: [{type: 'block'}],
+      of: [{type: 'string'}],
     },
-    {
-      name: 'higherPrice',
-      title: 'Higher Price',
-      description: "To show the 'from' price",
-      type: 'number',
-    },
-    {
-      name: 'price',
-      title: 'Price',
-      type: 'number',
-    },
+    // {
+    //   name: 'features',
+    //   title: 'Features',
+    //   type: 'array',
+    //   of: [{type: 'block'}],
+    // },
+    // {
+    //   name: 'higherPrice',
+    //   title: 'Higher Price',
+    //   description: "To show the 'from' price",
+    //   type: 'number',
+    // },
+    // {
+    //   name: 'price',
+    //   title: 'Price',
+    //   type: 'number',
+    // },
     {
       name: 'stripe',
       title: 'Stripe',
