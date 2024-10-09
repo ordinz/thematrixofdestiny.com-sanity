@@ -102,6 +102,12 @@ const romanceFields = [
     of: [{type: 'block'}],
   },
   {
+    name: 'seedKarmicBiggestProblems',
+    title: 'Seed Karmic: Biggest Problems',
+    type: 'array',
+    of: [{type: 'block'}],
+  },
+  {
     name: 'seedKarmicLessons',
     title: 'Seed Karmic: Lessons',
     type: 'array',
@@ -116,6 +122,12 @@ const romanceFields = [
   {
     name: 'karmicNegativeAspects',
     title: 'Karmic: Negative Aspects',
+    type: 'array',
+    of: [{type: 'block'}],
+  },
+  {
+    name: 'karmicBiggestProblems',
+    title: 'Karmic: Biggest Problems',
     type: 'array',
     of: [{type: 'block'}],
   },
