@@ -12,6 +12,18 @@ const romanceFields = [
     of: [{type: 'block'}],
   },
   {
+    name: 'seedEmotionalConnection',
+    title: 'Seed Emotional Connection',
+    type: 'array',
+    of: [{type: 'block'}],
+  },
+  {
+    name: 'EmotionalConnection',
+    title: 'Emotional Connection',
+    type: 'array',
+    of: [{type: 'block'}],
+  },
+  {
     name: 'seedComfortZone',
     title: 'Seed Comfort Zone',
     type: 'array',
