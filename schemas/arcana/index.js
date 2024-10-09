@@ -3,7 +3,7 @@ import purpose from './purpose'
 import moneyLine from './money'
 import character from './character'
 import talents from './talents'
-import connection from './connection'
+import {romance, friendship} from './connection'
 import year from './year'
 
 export default {
@@ -25,13 +25,14 @@ export default {
     },
     {
       name: 'money',
-      title: 'Money',
+      title: 'Money Line',
     },
-    {name: 'love', title: 'Love'},
+    {name: 'love', title: 'Love Line'},
     {name: 'purpose', title: 'Purpose'},
     {name: 'talents', title: 'Talents'},
-    {name: 'connection', title: 'Connection'},
     {name: 'year', title: 'Year'},
+    {name: 'romance', title: 'Romance Connection'},
+    {name: 'friendship', title: 'Friendship Connection'},
   ],
   preview: {
     select: {
@@ -77,7 +78,8 @@ export default {
       group: 'purpose',
     },
     {...talents, group: 'talents'},
-    {...connection, group: 'connection'},
+    {...romance, group: 'romance'},
+    {...friendship, group: 'friendship'},
     {...year, group: 'year'},
   ],
 }
