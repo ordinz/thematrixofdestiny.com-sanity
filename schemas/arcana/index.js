@@ -16,6 +16,10 @@ export default {
       title: 'Basic Information',
     },
     {
+      name: 'images',
+      title: 'Images',
+    },
+    {
       name: 'aspects',
       title: 'Aspects',
     },
@@ -64,12 +68,17 @@ export default {
       group: 'basics',
     },
     {
+      name: 'mx_image',
+      title: 'Mx Image',
+      type: 'image',
+      group: 'images',
+    },
+    {
       name: 'image',
       title: 'Image',
       type: 'image',
-      group: 'basics',
+      group: 'images',
     },
-
     ...character, // an array of fields
     {...moneyLine},
     {...love, group: 'love'},
