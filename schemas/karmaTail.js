@@ -1,6 +1,6 @@
 export default {
   name: 'karmaTail',
-  title: 'Karma Tail',
+  title: 'Karmic Tail',
   type: 'document',
   preview: {
     select: {

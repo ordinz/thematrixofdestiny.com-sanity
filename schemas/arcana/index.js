@@ -1,3 +1,4 @@
+import images from './images'
 import love from './love'
 import purpose from './purpose'
 import moneyLine from './money'
@@ -67,18 +68,7 @@ export default {
       of: [{type: 'string'}],
       group: 'basics',
     },
-    {
-      name: 'mx_image',
-      title: 'Mx Image',
-      type: 'image',
-      group: 'images',
-    },
-    {
-      name: 'image',
-      title: 'Image',
-      type: 'image',
-      group: 'images',
-    },
+    ...images,
     ...character, // an array of fields
     {...moneyLine},
     {...love, group: 'love'},
