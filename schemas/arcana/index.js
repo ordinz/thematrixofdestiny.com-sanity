@@ -6,6 +6,8 @@ import character from './character'
 import talents from './talents'
 import {romance, friendship} from './connection'
 import year from './year'
+import inspiration from './inspiration'
+import mission from './mission'
 
 export default {
   name: 'arcana',
@@ -38,6 +40,8 @@ export default {
     {name: 'year', title: 'Year'},
     {name: 'romance', title: 'Romance Connection'},
     {name: 'friendship', title: 'Friendship Connection'},
+    {name: 'inspiration', title: 'Inspiration'},
+    {name: 'mission', title: 'Mission'},
   ],
   preview: {
     select: {
@@ -80,5 +84,7 @@ export default {
     {...romance, group: 'romance'},
     {...friendship, group: 'friendship'},
     {...year, group: 'year'},
+    {...inspiration, group: 'inspiration'},
+    ...mission,
   ],
 }
