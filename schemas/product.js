@@ -174,6 +174,12 @@ export default {
           type: 'object',
           fields: stripeFields,
         },
+        {
+          name: 'stripe_sandbox',
+          title: 'Stripe Sandbox',
+          type: 'object',
+          fields: stripeFields,
+        },
       ],
     },
     {
