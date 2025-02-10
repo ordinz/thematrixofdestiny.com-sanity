@@ -117,6 +117,12 @@ export default {
       },
     },
     {
+      name: 'allow_promotion_codes',
+      title: 'Allow Promotion Codes',
+      type: 'boolean',
+      initialValue: false, // Defaulted to false
+    },
+    {
       name: 'isSubscription',
       title: 'Is Subscription',
       type: 'boolean',
@@ -203,5 +209,6 @@ export default {
       type: 'array',
       of: [{type: 'string'}],
     },
+    
   ],
 }
