@@ -117,6 +117,37 @@ export default {
       },
     },
     {
+      name: 'stripe',
+      title: 'Stripe',
+      type: 'object',
+      fields: [
+        {
+          name: 'llc_production',
+          title: 'LLC Production',
+          type: 'object',
+          fields: stripeFields,
+        },
+        {
+          name: 'mx_production',
+          title: 'Mx Production (DISCONTINUED)',
+          type: 'object',
+          fields: stripeFields,
+        },
+        {
+          name: 'stripe_sandbox',
+          title: 'Stripe Sandbox',
+          type: 'object',
+          fields: stripeFields,
+        },
+        {
+          name: 'mx_development',
+          title: 'Mx Development (DISCONTINUED)',
+          type: 'object',
+          fields: stripeFields,
+        },
+      ],
+    },
+    {
       name: 'allow_promotion_codes',
       title: 'Allow Promotion Codes',
       type: 'boolean',
@@ -163,31 +194,7 @@ export default {
     //   title: 'Price',
     //   type: 'number',
     // },
-    {
-      name: 'stripe',
-      title: 'Stripe',
-      type: 'object',
-      fields: [
-        {
-          name: 'mx_development',
-          title: 'Mx Development',
-          type: 'object',
-          fields: stripeFields,
-        },
-        {
-          name: 'mx_production',
-          title: 'Mx Production',
-          type: 'object',
-          fields: stripeFields,
-        },
-        {
-          name: 'stripe_sandbox',
-          title: 'Stripe Sandbox',
-          type: 'object',
-          fields: stripeFields,
-        },
-      ],
-    },
+
     {
       name: 'quantity',
       title: 'Quantity',
