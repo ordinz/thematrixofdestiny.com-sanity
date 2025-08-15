@@ -72,6 +72,18 @@ const stripeFields = [
     type: 'number',
   },
   {
+    name: 'orderBumpPrice',
+    title: 'Order Bump Price',
+    type: 'number',
+    description: 'Price for order bump upsell',
+  },
+  {
+    name: 'orderBumpPriceId',
+    title: 'Order Bump Price ID',
+    type: 'string',
+    description: 'Stripe Price ID for order bump',
+  },
+  {
     name: 'promo',
     title: 'Promo',
     type: 'object',
