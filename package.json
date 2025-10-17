@@ -11,7 +11,8 @@
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy",
     "backup": "sanity dataset export production ./backups/production-$(date +%Y%m%d-%H%M%S).tar.gz",
-    "backup-with-drafts": "sanity dataset export production ./backups/production-with-drafts-$(date +%Y%m%d-%H%M%S).tar.gz --include-drafts"
+    "backup-with-drafts": "sanity dataset export production ./backups/production-with-drafts-$(date +%Y%m%d-%H%M%S).tar.gz --include-drafts",
+    "backup-all": "echo 'Starting comprehensive backup...' && sanity dataset export production ./backups/production-$(date +%Y%m%d-%H%M%S).tar.gz && echo 'Production backup completed' && sanity dataset export production ./backups/production-with-drafts-$(date +%Y%m%d-%H%M%S).tar.gz --include-drafts && echo 'Production with drafts backup completed' && sanity dataset export staging ./backups/staging-$(date +%Y%m%d-%H%M%S).tar.gz && echo 'Staging backup completed' && sanity dataset export staging ./backups/staging-with-drafts-$(date +%Y%m%d-%H%M%S).tar.gz --include-drafts && echo 'Staging with drafts backup completed' && echo 'All backups completed successfully!'"
   },
   "keywords": [
     "sanity"
