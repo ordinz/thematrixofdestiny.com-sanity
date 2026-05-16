@@ -1,4 +1,4 @@
-import {Boxes, DollarSign, Pyramid, Search, Sparkles} from 'lucide-react'
+import {Boxes, DollarSign, Languages, Pyramid, Search, Sparkles} from 'lucide-react'
 import arcana from './arcana'
 // import {schemaTypes as blogSchemaTypes} from './blog'
 import faq from './faq'
@@ -9,6 +9,7 @@ import pageMetadata from './pageMetadata'
 import product from './product'
 import review from './review'
 import teamMember from './teamMember'
+import uiMessage from './uiMessage'
 // import videoCourses from './video-courses'
 
 export const groups = [
@@ -16,6 +17,7 @@ export const groups = [
   {title: 'Sales', icon: DollarSign, schemaTypes: [product]},
   {title: 'Landing Page', icon: Pyramid, schemaTypes: [review, faq, teamMember]},
   {title: 'SEO', icon: Search, schemaTypes: [pageMetadata]},
+  {title: 'UI', icon: Languages, schemaTypes: [uiMessage]},
   {title: 'Other', icon: Boxes, schemaTypes: [genericText]},
 ]
 
