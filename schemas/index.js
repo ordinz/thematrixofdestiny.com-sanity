@@ -1,21 +1,25 @@
-import {Boxes, DollarSign, Pyramid, Search, Sparkles} from 'lucide-react'
+import {Boxes, DollarSign, Languages, Pyramid, Search, Sparkles} from 'lucide-react'
 import arcana from './arcana'
+import arcana_v2 from './arcana_v2'
 // import {schemaTypes as blogSchemaTypes} from './blog'
 import faq from './faq'
 import genericText from './genericText'
 import karmaTail from './karmaTail'
+import karmicTail_v2 from './karmicTail_v2'
 import line from './line'
 import pageMetadata from './pageMetadata'
 import product from './product'
 import review from './review'
 import teamMember from './teamMember'
+import uiMessage from './uiMessage'
 // import videoCourses from './video-courses'
 
 export const groups = [
-  {title: 'Arcana', icon: Sparkles, schemaTypes: [arcana, karmaTail]},
+  {title: 'Arcana', icon: Sparkles, schemaTypes: [arcana, arcana_v2, karmaTail, karmicTail_v2]},
   {title: 'Sales', icon: DollarSign, schemaTypes: [product]},
   {title: 'Landing Page', icon: Pyramid, schemaTypes: [review, faq, teamMember]},
   {title: 'SEO', icon: Search, schemaTypes: [pageMetadata]},
+  {title: 'UI', icon: Languages, schemaTypes: [uiMessage]},
   {title: 'Other', icon: Boxes, schemaTypes: [genericText]},
 ]
 
