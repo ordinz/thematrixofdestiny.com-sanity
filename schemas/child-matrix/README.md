@@ -33,12 +33,14 @@ Stable machine keys used by the frontend:
 
 ## Position keys (examples)
 
-- `main-character`
-- `personal-talents`
-- `father-line-talents`
-- `mother-line-talents`
+- `outer-character`, `sky-character` (personality day/month)
+- `personal-talents`, `father-line-talents`, `mother-line-talents`
 - `generation-1`, `generation-2`, `generation-3`
-- `earth-purpose`, `heaven-purpose`, `social-purpose`, `spiritual-purpose`
+- `earth-purpose`, `heaven-purpose`, `personal-result`
+- `social-male`, `social-female`, `social-result`
+- `spiritual-main`, `ancestral-line`
+
+Calc paths and coverage modes: [`scripts/child-matrix/position-calc-map.json`](../../scripts/child-matrix/position-calc-map.json).
 
 ## Import shape
 

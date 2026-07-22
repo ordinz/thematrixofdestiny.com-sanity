@@ -1,0 +1,131 @@
+{
+  "$schema_comment": "Child Matrix positionKey → MatrixOfDestiny calc path. Verified against gadalkindom scrapes for 2025-09-25 (Elijah) and 1990-06-15 (Anna). coverageMode observed = use unique-date possibilities; all-22 = formula unknown / source omits slots.",
+  "experienceKind": "child",
+  "source": "gadalkindom",
+  "verifiedDates": ["2025-09-25", "1990-06-15"],
+  "positions": {
+    "outer-character": {
+      "sectionKey": "personality",
+      "calcPath": "a",
+      "x402": "numerology.day",
+      "coverageMode": "observed",
+      "notes": "First personality arcana (день / outer self). Split from former main-character dual block."
+    },
+    "sky-character": {
+      "sectionKey": "personality",
+      "calcPath": "b",
+      "x402": "numerology.month",
+      "coverageMode": "observed",
+      "notes": "Second personality arcana (месяц / sky crown)."
+    },
+    "personal-talents": {
+      "sectionKey": "innate-talents",
+      "calcPath": "b2",
+      "x402": "lines.sky.Third Eye",
+      "coverageMode": "observed",
+      "notes": "Center of talents line (B2)."
+    },
+    "father-line-talents": {
+      "sectionKey": "innate-talents",
+      "calcPath": null,
+      "coverageMode": "all-22",
+      "notes": "No stable calcPath across dates (Elijah d3=8 vs Anna c1/a7/sky=10). Cover all 1–22 until formula locked."
+    },
+    "mother-line-talents": {
+      "sectionKey": "innate-talents",
+      "calcPath": null,
+      "coverageMode": "all-22",
+      "notes": "Source sometimes omits this block; formula unverified. Cover all 1–22."
+    },
+    "self-realization-direction": {
+      "sectionKey": "innate-talents",
+      "calcPath": null,
+      "coverageMode": "all-22",
+      "notes": "Nested under talent blocks in source HTML; not a separate arcana heading."
+    },
+    "generation-1": {
+      "sectionKey": "parent-relationship",
+      "calcPath": "a",
+      "x402": "numerology.day",
+      "coverageMode": "observed",
+      "notes": "Earth-line channel start (A)."
+    },
+    "generation-2": {
+      "sectionKey": "parent-relationship",
+      "calcPath": "a1",
+      "coverageMode": "observed",
+      "notes": "Earth-line A1."
+    },
+    "generation-3": {
+      "sectionKey": "parent-relationship",
+      "calcPath": "a2",
+      "coverageMode": "observed",
+      "notes": "Earth-line A2."
+    },
+    "father-guidance": {
+      "sectionKey": "parenting-guidance",
+      "calcPath": null,
+      "coverageMode": "all-22",
+      "notes": "No shared calc key across verified dates (Elijah c1 vs Anna purpose.result)."
+    },
+    "mother-guidance": {
+      "sectionKey": "parenting-guidance",
+      "calcPath": null,
+      "coverageMode": "all-22",
+      "notes": "No shared calc key across verified dates (Elijah l vs Anna c2/a6)."
+    },
+    "ancestral-line": {
+      "sectionKey": "ancestral-programs",
+      "calcPath": "square",
+      "calcPathKind": "array",
+      "arrayPaths": ["d", "d6", "c5", "c"],
+      "coverageMode": "observed-union",
+      "notes": "Square corners in order d → d6 → c5 → c; source may dedupe when values collide."
+    },
+    "heaven-purpose": {
+      "sectionKey": "personal-purpose",
+      "calcPath": "purpose.sky",
+      "coverageMode": "observed",
+      "notes": "First personal-purpose arcana when sky≠earth; Небо."
+    },
+    "earth-purpose": {
+      "sectionKey": "personal-purpose",
+      "calcPath": "purpose.earth",
+      "coverageMode": "observed",
+      "notes": "Земля component."
+    },
+    "personal-result": {
+      "sectionKey": "personal-purpose",
+      "calcPath": "purpose.result",
+      "x402": "purpose.personal",
+      "coverageMode": "observed",
+      "notes": "Purpose aggregate (before40). Source shows 2–3 arcana: sky, earth, result (dedupes when sky=earth)."
+    },
+    "social-male": {
+      "sectionKey": "social-purpose",
+      "calcPath": "socialization.m",
+      "coverageMode": "observed",
+      "notes": "Male socialization component."
+    },
+    "social-female": {
+      "sectionKey": "social-purpose",
+      "calcPath": "socialization.f",
+      "coverageMode": "observed",
+      "notes": "Female socialization component. Gadalkindom sometimes emits result as second block when m=f — scraper verifies against calc."
+    },
+    "social-result": {
+      "sectionKey": "social-purpose",
+      "calcPath": "socialization.result",
+      "x402": "purpose.social",
+      "coverageMode": "observed",
+      "notes": "After40 aggregate; may appear as second social block on source pages."
+    },
+    "spiritual-main": {
+      "sectionKey": "spiritual-purpose",
+      "calcPath": "spiritualHarmony",
+      "x402": "purpose.spiritual",
+      "coverageMode": "observed",
+      "notes": "spiritualHarmony."
+    }
+  }
+}

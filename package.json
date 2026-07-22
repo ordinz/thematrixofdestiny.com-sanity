@@ -14,6 +14,9 @@
     "backup-with-drafts": "sanity dataset export production ./backups/production-with-drafts-$(date +%Y%m%d-%H%M%S).tar.gz --include-drafts",
     "backup-all": "echo 'Starting comprehensive backup...' && sanity dataset export production ./backups/production-$(date +%Y%m%d-%H%M%S).tar.gz && echo 'Production backup completed' && sanity dataset export production ./backups/production-with-drafts-$(date +%Y%m%d-%H%M%S).tar.gz --include-drafts && echo 'Production with drafts backup completed' && sanity dataset export staging ./backups/staging-$(date +%Y%m%d-%H%M%S).tar.gz && echo 'Staging backup completed' && sanity dataset export staging ./backups/staging-with-drafts-$(date +%Y%m%d-%H%M%S).tar.gz --include-drafts && echo 'Staging with drafts backup completed' && echo 'All backups completed successfully!'",
     "cm:scrape": "node scripts/child-matrix/scrape-gadalkindom.mjs",
+    "cm:pick-dates": "node scripts/child-matrix/pick-dates.mjs",
+    "cm:scrape-batch": "node scripts/child-matrix/scrape-batch.mjs",
+    "cm:coverage": "node scripts/child-matrix/coverage.mjs",
     "cm:import:dry": "node scripts/child-matrix/import.mjs --dry --file seed/child-matrix/sections.ndjson --file seed/child-matrix/positions.ndjson --file out/child-matrix/snapshots.ndjson --file out/child-matrix/interpretations.ndjson",
     "cm:import": "node scripts/child-matrix/import.mjs --replace --file seed/child-matrix/sections.ndjson --file seed/child-matrix/positions.ndjson --file out/child-matrix/snapshots.ndjson --file out/child-matrix/interpretations.ndjson"
   },

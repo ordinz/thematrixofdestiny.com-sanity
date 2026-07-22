@@ -22,10 +22,14 @@ import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
 import {argv, exit} from 'node:process'
+import {fileURLToPath} from 'node:url'
+import {calculateMatrixNumbers, resolveCalcValue} from './matrixNumbers.mjs'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const SOURCE_URL_BASE = 'https://gadalkindom.ru/matritsa-sudby/detskaya.html'
 const SOURCE_SITE = 'gadalkindom'
-const PARSER_VERSION = '1.0.0'
+const PARSER_VERSION = '1.1.0'
 
 // ---------- CLI parsing ----------
 
@@ -154,11 +158,34 @@ const POSITION_BY_RU_LABEL = {
 
 // Section-level default position (used when H4 is an arcana heading directly)
 const DEFAULT_POSITION_BY_SECTION = {
-  personality: 'main-character',
+  personality: 'outer-character',
   'ancestral-programs': 'ancestral-line',
-  'personal-purpose': 'earth-purpose', // 1st arcana=earth, 2nd=heaven (handled below)
-  'social-purpose': 'social-male', // 1st=male, 2nd=female
+  'personal-purpose': 'heaven-purpose',
+  'social-purpose': 'social-male',
   'spiritual-purpose': 'spiritual-main',
+}
+
+/**
+ * Ordinal position within a section when the source lists 2–3 unlabeled arcana.
+ * Personal purpose: sky → earth → result (dedupes when sky===earth).
+ * Social: m → f → result (source may emit m + result when m===f).
+ * Personality: day (a) → month (b).
+ */
+function ordinalPositionKey(section, index) {
+  if (section === 'personality') {
+    return index === 0 ? 'outer-character' : 'sky-character'
+  }
+  if (section === 'personal-purpose') {
+    if (index === 0) return 'heaven-purpose'
+    if (index === 1) return 'earth-purpose'
+    return 'personal-result'
+  }
+  if (section === 'social-purpose') {
+    if (index === 0) return 'social-male'
+    if (index === 1) return 'social-female'
+    return 'social-result'
+  }
+  return null
 }
 
 // ---------- Walk tokens ----------
@@ -198,12 +225,13 @@ for (const tok of tokens) {
         titleRu: tok.text,
         cardNameRu: am[2].trim(),
       }
-      // If we have no position set yet, pick section default (with ordinal handling)
-      let posKey = currentPosition || DEFAULT_POSITION_BY_SECTION[currentSection] || null
-      if (currentSection === 'personal-purpose') {
-        posKey = arcanaIndexInSection === 0 ? 'earth-purpose' : 'heaven-purpose'
-      } else if (currentSection === 'social-purpose') {
-        posKey = arcanaIndexInSection === 0 ? 'social-male' : 'social-female'
+      // Labeled position (H4 talent/generation) wins; otherwise ordinal defaults.
+      let posKey = currentPosition
+      if (!posKey) {
+        posKey =
+          ordinalPositionKey(currentSection, arcanaIndexInSection) ||
+          DEFAULT_POSITION_BY_SECTION[currentSection] ||
+          null
       }
       arcanaIndexInSection++
       currentBuf = {
@@ -235,6 +263,70 @@ for (const tok of tokens) {
   }
 }
 flush()
+
+// ---------- Disambiguate ordinal purpose/social against matrix calc ----------
+const calcMap = JSON.parse(
+  fs.readFileSync(path.join(__dirname, 'position-calc-map.json'), 'utf8'),
+)
+const matrixNums = calculateMatrixNumbers(args.date)
+
+function expectedFor(positionKey) {
+  return resolveCalcValue(matrixNums, calcMap.positions[positionKey])
+}
+
+function rematchSection(sectionKey, candidates) {
+  const sectionBlocks = blocks.filter((b) => b.section === sectionKey && !b._labeled)
+  if (sectionBlocks.length === 0) return
+  const unused = new Set(candidates)
+  for (const b of sectionBlocks) {
+    let best = null
+    for (const key of unused) {
+      const exp = expectedFor(key)
+      if (typeof exp === 'number' && exp === b.arcana.number) {
+        best = key
+        break
+      }
+    }
+    if (best) {
+      b.position = best
+      unused.delete(best)
+    }
+  }
+}
+
+// Mark H4-labeled positions so rematch won't move them
+for (const b of blocks) {
+  if (
+    b.position &&
+    ![
+      'outer-character',
+      'sky-character',
+      'heaven-purpose',
+      'earth-purpose',
+      'personal-result',
+      'social-male',
+      'social-female',
+      'social-result',
+    ].includes(b.position)
+  ) {
+    b._labeled = true
+  }
+}
+
+rematchSection('personality', ['outer-character', 'sky-character'])
+rematchSection('personal-purpose', ['heaven-purpose', 'earth-purpose', 'personal-result'])
+rematchSection('social-purpose', ['social-male', 'social-female', 'social-result'])
+
+for (const b of blocks) {
+  b.calcPath = calcMap.positions[b.position]?.calcPath ?? null
+  const exp = expectedFor(b.position)
+  b.matrixValue = typeof exp === 'number' ? exp : Array.isArray(exp) ? exp : null
+  if (typeof exp === 'number' && exp !== b.arcana.number) {
+    console.error(
+      `[warn] calc mismatch ${b.section}/${b.position}: scraped ${b.arcana.number} vs matrix ${exp}`,
+    )
+  }
+}
 
 // ---------- Build documents ----------
 
@@ -316,7 +408,9 @@ const interpretations = blocks
 function mapPositionId(sectionKey, positionKey) {
   // Mirrors seed/child-matrix/positions.ndjson _id conventions
   const table = {
-    'personality/main-character': 'position.child.personality.main-character',
+    'personality/outer-character': 'position.child.personality.outer-character',
+    'personality/sky-character': 'position.child.personality.sky-character',
+    'personality/main-character': 'position.child.personality.outer-character', // legacy
     'personality/ideal-relationship': 'position.child.personality.ideal-relationship',
     'innate-talents/personal-talents': 'position.child.innate-talents.personal',
     'innate-talents/father-line-talents': 'position.child.innate-talents.father-line',
@@ -330,8 +424,10 @@ function mapPositionId(sectionKey, positionKey) {
     'ancestral-programs/ancestral-line': 'position.child.ancestral-programs.line',
     'personal-purpose/earth-purpose': 'position.child.personal-purpose.earth',
     'personal-purpose/heaven-purpose': 'position.child.personal-purpose.heaven',
+    'personal-purpose/personal-result': 'position.child.personal-purpose.result',
     'social-purpose/social-male': 'position.child.social-purpose.male',
     'social-purpose/social-female': 'position.child.social-purpose.female',
+    'social-purpose/social-result': 'position.child.social-purpose.result',
     'spiritual-purpose/spiritual-main': 'position.child.spiritual-purpose.main',
   }
   return table[`${sectionKey}/${positionKey}`] || null
