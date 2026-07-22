@@ -1,5 +1,5 @@
 {
-  "$schema_comment": "Child Matrix positionKey → MatrixOfDestiny calc path. Verified against gadalkindom scrapes for 2025-09-25 (Elijah) and 1990-06-15 (Anna). coverageMode observed = use unique-date possibilities; all-22 = formula unknown / source omits slots.",
+  "$schema_comment": "Child Matrix positionKey → adult MatrixOfDestiny calc path (working approximation for gadalkindom). Verified against scrapes for 2025-09-25 (Elijah) and 1990-06-15 (Anna). coverageMode observed = unique-date possibilities; all-22/null = no oracle — opportunistic scrape only. MX-272 children calc may retarget later.",
   "experienceKind": "child",
   "source": "gadalkindom",
   "verifiedDates": ["2025-09-25", "1990-06-15"],

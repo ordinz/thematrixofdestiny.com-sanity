@@ -41,6 +41,8 @@ On HTTP 429/503: exponential backoff from 60s (3 retries), then skip date.
 
 ## Completeness
 
-**Observed tuples only** for positions with a known `calcPath`. Positions with `coverageMode: "all-22"` (formula not locked — father/mother talents, parenting guidance) target arcana 1–22 until the map is improved.
+**Mapped positions** (`calcPath` set): drive scrape planning from **observed** adult-chart tuples only. Do not chase engine-impossible combos.
 
-Do not chase engine-impossible combos (same policy as adult position-possibilities).
+**Unmapped positions** (`calcPath: null`, currently father/mother talents, parenting guidance, self-realization): **no coverage oracle**. Treat whatever gadalkindom emits as opportunistic fill — do not use `cm:coverage` exit-code as a hard fail for those slots, and do not burn batch quota trying to hit all 22.
+
+Adult `MatrixOfDestiny` paths are a **working approximation** for many gadalkindom sections. [MX-272](https://linear.app/thematrixofdestiny/issue/MX-272) (true children’s 4-anchor calc) may retarget the map later; until then, do not rewrite the pipeline.
