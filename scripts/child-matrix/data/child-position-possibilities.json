@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-22T18:48:22.775Z",
+  "generated_at": "2026-07-22T19:26:25.621Z",
   "source": {
     "unique_dates": "/Users/ordin/dev/mx/https/app/tmp/dates/unique-dates.csv",
     "map": "/Users/ordin/dev/mx/https/sanity/main/scripts/child-matrix/position-calc-map.json",
@@ -166,11 +166,9 @@
     },
     "self-realization-direction": {
       "sectionKey": "innate-talents",
-      "calcPath": null,
-      "coverageMode": "all-22",
+      "calcPath": "b2",
+      "coverageMode": "derived",
       "observed": [
-        1,
-        2,
         3,
         4,
         5,
@@ -192,8 +190,11 @@
         21,
         22
       ],
-      "missing": [],
-      "count": 22
+      "missing": [
+        1,
+        2
+      ],
+      "count": 20
     },
     "generation-1": {
       "sectionKey": "parent-relationship",

@@ -9,8 +9,9 @@ Tools for capturing Russian source content (currently gadalkindom.ru) into the C
 | `position-calc-map.json` | `positionKey` → `MatrixOfDestiny` calc path (+ coverage mode) |
 | `matrixNumbers.mjs` | Local matrix calculator (no app import) |
 | `scrape-gadalkindom.mjs` | Single-date scrape → snapshot + interpretation NDJSON |
-| `pick-dates.mjs` | Greedy set-cover over missing `(position × arcana)` tuples |
+| `pick-dates.mjs` | Weighted set-cover (rare tuples, social-female when m≠f, soft predictors) |
 | `scrape-batch.mjs` | Slow sequential batch scrape (15s+jitter, caps, backoff) |
+| `backfill-synth.mjs` | Offline synth for m=f / sky=earth / self-realization clones |
 | `coverage.mjs` | Report observed vs scraped; exit 1 if incomplete |
 | `import.mjs` | Import NDJSON into Sanity |
 | `data/child-position-possibilities.json` | Generated coverage targets (from app) |
@@ -24,6 +25,7 @@ pnpm child:position-possibilities
 # In sanity/main/
 npm run cm:pick-dates
 npm run cm:scrape-batch          # polite defaults: 15s delay, max 20/run
+npm run cm:backfill-synth        # credit collision / nested clones from inventory
 npm run cm:coverage              # exit 1 until complete
 npm run cm:import:dry            # then cm:import against staging
 ```

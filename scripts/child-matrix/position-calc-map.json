@@ -39,9 +39,10 @@
     },
     "self-realization-direction": {
       "sectionKey": "innate-talents",
-      "calcPath": null,
-      "coverageMode": "all-22",
-      "notes": "Nested under talent blocks in source HTML; not a separate arcana heading."
+      "calcPath": "b2",
+      "coverageMode": "derived",
+      "deriveFrom": "personal-talents",
+      "notes": "Nested under talent blocks (same arcana as parent). Scraper clones from personal/father/mother talent blocks that contain the self-realization subheading. Targets = personal-talents observed set."
     },
     "generation-1": {
       "sectionKey": "parent-relationship",

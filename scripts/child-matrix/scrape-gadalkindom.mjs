@@ -317,11 +317,72 @@ rematchSection('personality', ['outer-character', 'sky-character'])
 rematchSection('personal-purpose', ['heaven-purpose', 'earth-purpose', 'personal-result'])
 rematchSection('social-purpose', ['social-male', 'social-female', 'social-result'])
 
+// Synthesize colliding calc slots the source omits as separate headings
+function cloneBlock(src, positionKey) {
+  return {
+    ...src,
+    position: positionKey,
+    headingPath: [...(src.headingPath || []), `(synthesized ${positionKey})`],
+    synthesized: true,
+    paragraphs: [...(src.paragraphs || [])],
+    bullets: [...(src.bullets || [])],
+    arcana: {...src.arcana},
+  }
+}
+
+const socialMale = blocks.find((b) => b.position === 'social-male')
+const socialFemale = blocks.find((b) => b.position === 'social-female')
+if (
+  socialMale &&
+  !socialFemale &&
+  matrixNums['socialization.m'] === matrixNums['socialization.f'] &&
+  socialMale.arcana.number === matrixNums['socialization.m']
+) {
+  blocks.push(cloneBlock(socialMale, 'social-female'))
+  console.error(
+    `[synth] social-female ← social-male (m=f=${matrixNums['socialization.m']})`,
+  )
+}
+
+const heaven = blocks.find((b) => b.position === 'heaven-purpose')
+const earth = blocks.find((b) => b.position === 'earth-purpose')
+if (
+  heaven &&
+  !earth &&
+  matrixNums['purpose.sky'] === matrixNums['purpose.earth'] &&
+  heaven.arcana.number === matrixNums['purpose.sky']
+) {
+  blocks.push(cloneBlock(heaven, 'earth-purpose'))
+  console.error(
+    `[synth] earth-purpose ← heaven-purpose (sky=earth=${matrixNums['purpose.sky']})`,
+  )
+}
+
+// Self-realization is always nested under each talent arcana on gadalkindom — clone those
+for (const b of [...blocks]) {
+  if (b.section !== 'innate-talents') continue
+  if (!['personal-talents', 'father-line-talents', 'mother-line-talents'].includes(b.position)) {
+    continue
+  }
+  if (
+    blocks.some(
+      (x) =>
+        x.position === 'self-realization-direction' && x.arcana?.number === b.arcana.number,
+    )
+  ) {
+    continue
+  }
+  blocks.push(cloneBlock(b, 'self-realization-direction'))
+  console.error(
+    `[synth] self-realization-direction ← ${b.position} (arcana ${b.arcana.number})`,
+  )
+}
+
 for (const b of blocks) {
   b.calcPath = calcMap.positions[b.position]?.calcPath ?? null
   const exp = expectedFor(b.position)
   b.matrixValue = typeof exp === 'number' ? exp : Array.isArray(exp) ? exp : null
-  if (typeof exp === 'number' && exp !== b.arcana.number) {
+  if (typeof exp === 'number' && exp !== b.arcana.number && !b.synthesized) {
     console.error(
       `[warn] calc mismatch ${b.section}/${b.position}: scraped ${b.arcana.number} vs matrix ${exp}`,
     )
