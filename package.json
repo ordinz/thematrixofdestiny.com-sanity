@@ -18,6 +18,8 @@
     "cm:scrape-batch": "node scripts/child-matrix/scrape-batch.mjs",
     "cm:backfill-synth": "node scripts/child-matrix/backfill-synth.mjs",
     "cm:coverage": "node scripts/child-matrix/coverage.mjs",
+    "cm:translate": "node scripts/child-matrix/translate.mjs --dataset production",
+    "cm:translate:dry": "node scripts/child-matrix/translate.mjs --dataset production --dry --limit 3",
     "cm:import:dry": "node scripts/child-matrix/import.mjs --dry --file seed/child-matrix/sections.ndjson --file seed/child-matrix/positions.ndjson --file out/child-matrix/snapshots.ndjson --file out/child-matrix/interpretations.ndjson",
     "cm:import": "node scripts/child-matrix/import.mjs --replace --file seed/child-matrix/sections.ndjson --file seed/child-matrix/positions.ndjson --file out/child-matrix/snapshots.ndjson --file out/child-matrix/interpretations.ndjson"
   },

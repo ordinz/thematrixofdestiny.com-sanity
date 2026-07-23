@@ -65,15 +65,15 @@
     },
     "father-guidance": {
       "sectionKey": "parenting-guidance",
-      "calcPath": null,
-      "coverageMode": "all-22",
-      "notes": "No shared calc key across verified dates (Elijah c1 vs Anna purpose.result)."
+      "calcPath": "c1",
+      "coverageMode": "observed",
+      "notes": "Provisional child-profile path (Elijah 2025-09-25 = c1). Anna 1990-06-15 matched purpose.result — formula not fully locked."
     },
     "mother-guidance": {
       "sectionKey": "parenting-guidance",
-      "calcPath": null,
-      "coverageMode": "all-22",
-      "notes": "No shared calc key across verified dates (Elijah l vs Anna c2/a6)."
+      "calcPath": "l",
+      "coverageMode": "observed",
+      "notes": "Provisional child-profile path (Elijah 2025-09-25 = l). Anna 1990-06-15 matched c2/a6 — formula not fully locked."
     },
     "ancestral-line": {
       "sectionKey": "ancestral-programs",

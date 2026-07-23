@@ -64,7 +64,8 @@ Pipeline:
 
 1. Scraper writes each chunk to a `sourceSnapshot`.
 2. Transform step creates draft `interpretationBlock` documents with `qualityStatus: "raw"`.
-3. Editors advance status through `translated` → `reviewed` → `published`.
+3. `npm run cm:translate` fills EN fields on live Sanity docs (`titleEn`, `bodyEnLiteral`, `bodyEnProduct`, `bulletsEn`) and sets `qualityStatus: "translated"`.
+4. Editors advance status through `reviewed` → `published`.
 
 ## Query shape (front-end)
 
