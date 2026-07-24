@@ -13,6 +13,7 @@ import genericText from './genericText'
 import karmaTail from './karmaTail'
 import karmicTail_v2 from './karmicTail_v2'
 import line from './line'
+import {marketingGlobal, marketingPage, marketingSectionTypes} from './marketing'
 import pageMetadata from './pageMetadata'
 import product from './product'
 import review from './review'
@@ -29,11 +30,18 @@ export const groups = [
   },
   {title: 'Sales', icon: DollarSign, schemaTypes: [product]},
   {title: 'Landing Page', icon: Pyramid, schemaTypes: [review, faq, teamMember]},
+  {
+    title: 'Marketing',
+    icon: Pyramid,
+    schemaTypes: [marketingPage, marketingGlobal],
+  },
   {title: 'SEO', icon: Search, schemaTypes: [pageMetadata]},
   {title: 'UI', icon: Languages, schemaTypes: [uiMessage]},
   {title: 'Other', icon: Boxes, schemaTypes: [genericText]},
 ]
 
-export const schemaTypes = groups.reduce((types, group) => {
-  return types.concat(group.schemaTypes)
-}, [])
+export const schemaTypes = groups
+  .reduce((types, group) => {
+    return types.concat(group.schemaTypes)
+  }, [])
+  .concat(marketingSectionTypes)

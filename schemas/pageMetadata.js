@@ -5,11 +5,27 @@ export default {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'url.current',
+      url: 'url.current',
+      language: 'language',
       media: 'ogImage',
+    },
+    prepare({title, url, language, media}) {
+      return {
+        title,
+        subtitle: [language ?? 'en', url].filter(Boolean).join(' · '),
+        media,
+      }
     },
   },
   fields: [
+    {
+      name: 'language',
+      title: 'Language',
+      type: 'string',
+      description:
+        'BCP 47 language tag (e.g. "en", "de", "ru"). Optional for existing English docs (treat missing as "en"); required for new locale variants.',
+      initialValue: 'en',
+    },
     {
       name: 'url',
       title: 'URL',
