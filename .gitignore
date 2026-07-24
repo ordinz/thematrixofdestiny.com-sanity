@@ -31,3 +31,8 @@
 .env*
 
 /backups/*
+
+# Child Matrix scraper output (regenerable)
+/out/
+
+.cursor/
