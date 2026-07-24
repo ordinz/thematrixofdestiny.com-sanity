@@ -34,3 +34,5 @@
 
 # Child Matrix scraper output (regenerable)
 /out/
+
+.cursor/
