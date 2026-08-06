@@ -167,6 +167,37 @@ const romanceFields = [
     type: 'array',
     of: [{type: 'block'}],
   },
+  {
+    name: 'sections',
+    title: 'Sections (compact)',
+    description:
+      'Attribute-limit shape: shared PT under sections[].body. Prefer this over uniquely named seed* fields. App dual-reads both during migration.',
+    type: 'array',
+    of: [
+      {
+        type: 'object',
+        name: 'romanceSection',
+        fields: [
+          {
+            name: 'key',
+            title: 'Key',
+            type: 'string',
+            description: 'e.g. whyTheCoupleMet, comfortZoneAdvice',
+            validation: (Rule) => Rule.required(),
+          },
+          {
+            name: 'body',
+            title: 'Body',
+            type: 'array',
+            of: [{type: 'block'}],
+          },
+        ],
+        preview: {
+          select: {title: 'key'},
+        },
+      },
+    ],
+  },
 ]
 
 const friendshipFields = [...romanceFields]
